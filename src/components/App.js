@@ -7,13 +7,15 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      isHeaderOpened: true
+      isHeaderOpened: true,
+      isProfileCardDisliked: false
     };
     this.handleClick = this.handleClick.bind(this)
 }
   handleClick() {
     this.setState(state => ({
-      isHeaderOpened: !state.isHeaderOpened
+      isHeaderOpened: !state.isHeaderOpened,
+      isProfileCardDisliked: !state.isProfileCardDisliked
     }));
   }
 
@@ -27,10 +29,11 @@ class App extends Component {
         <div>
           {staticData.map(function (el) {
             return (
-              <Profile name={el.name} age={el.age} location={el.location}/>
+                <Profile name={el.name} age={el.age} location={el.location}/>
             )
           })
           }
+
         </div>
       </div>
     );
